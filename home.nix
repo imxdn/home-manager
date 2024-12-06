@@ -3,6 +3,7 @@
 {
     imports = [
         ./modules/fzf.nix
+        ./modules/lazygit.nix
         ./modules/nvim.nix
         ./modules/starship.nix
         ./modules/tmux.nix
@@ -15,7 +16,7 @@
     home.homeDirectory = "/home/aimad";
 
     # Compatbility with Home Manager releases
-    home.stateVersion = "24.05";
+    home.stateVersion = "24.11";
 
     # Nix packages to install
     home.packages = with pkgs; [
@@ -27,7 +28,7 @@
         ripgrep
 
         # Fonts
-        (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+        nerd-fonts.jetbrains-mono
     ];
 
     # Files to create
