@@ -6,7 +6,7 @@ opt.showmode = false
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 4
-opt.smartindent = true
+opt.autoindent = true
 opt.tabstop = 4
 opt.softtabstop = 4
 
