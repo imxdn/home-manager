@@ -2,7 +2,15 @@ return {
     {
         "williamboman/mason.nvim",
         config = function()
-            require("mason").setup()
+            require("mason").setup({
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗"
+                    }
+                }
+            })
         end
     },
     {
@@ -13,44 +21,51 @@ return {
 
             mason_lspconfig.setup({
                 ensure_installed = {
-                    "biome",
-                    "ts_ls",
-                    "html",
-                    "cssls",
+                    -- lua
                     "lua_ls",
+                    -- markdown
+                    "markdown_oxide",
+                    -- nix
+                    "nil_ls",
+                    -- python
                     "pyright",
+                    -- rust
                     "rust_analyzer",
-                    "markdown_oxide"
-                }
+                    -- web
+                    "biome", "ts_ls",
+                },
+                automation_installation = true,
             })
 
-            local capabilities = cmp_nvim_lsp.default_capabilities()
-
-            mason_lspconfig.setup_handlers {
+            mason_lspconfig.setup_handlers({
                 -- default handler for installed servers
                 function(server_name)
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
+                    require("lspconfig")[server_name].setup({})
                 end,
+
                 -- configure lua server (with special settings)
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
-                    lspconfig.lua_ls.setup {
+                    lspconfig.lua_ls.setup({
                         settings = {
                             Lua = {
-                                -- make the language server recognize "vim" global
+                                runtime = {
+                                    version = 'LuaJIT'
+                                },
                                 diagnostics = {
                                     globals = {"vim"}
                                 },
                                 completion = {
                                     callSnippet = "Replace"
+                                },
+                                workspace = {
+                                    library = { vim.env.VIMRUNTIME }
                                 }
                             }
                         }
-                    }
+                    })
                 end
-            }
+            })
         end
     }
 }

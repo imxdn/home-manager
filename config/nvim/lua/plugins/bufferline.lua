@@ -7,7 +7,7 @@ return {
         options = {
             themable = true,
             offsets = {
-                { filetype = "NvimTree", highlight = "NvimTreeNormal" },
+                { filetype = "NvimTree", highlight = "NvimTreeNormal", text = "File Explorer", separator = true },
             },
         },
     },

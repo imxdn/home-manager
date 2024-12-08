@@ -13,11 +13,10 @@ return {
         },
         "saadparwaiz1/cmp_luasnip", -- for autocompletion
         "rafamadriz/friendly-snippets", -- useful snippets
-        "onsails/lspkind.nvim"
+        "onsails/lspkind.nvim" -- for icons
     },
     config = function()
         local cmp = require('cmp')
-        local luasnip = require('luasnip')
         local lspkind = require('lspkind')
 
         -- Load snippets
@@ -30,6 +29,10 @@ return {
                 { name = "luasnip" }, -- snippets
                 { name = "buffer" }, -- text within current buffer
                 { name = "path" }, -- file system paths
+            },
+            preselect = 'item',
+            completion = {
+                completeopt = 'menu,menuone,noinsert,noselect'
             },
             snippet = {
                 expand = function(args)
@@ -48,7 +51,7 @@ return {
                     select = false
                 }
             }),
-            -- VSCode like pictograms for autocomplete
+            -- Pictograms for autocomplete
             formatting = {
                 format = lspkind.cmp_format({
                     mode = 'symbol',

@@ -7,7 +7,7 @@ return {
     },
     config = function()
 
-        -- disable netrw at the very start of your init.lua
+        -- Disable netrw at the very start of your init.lua
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
@@ -16,12 +16,10 @@ return {
         -- Keymaps
         local keymap = vim.keymap -- for conciseness
 
-        keymap.set("n", "<leader>ee", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" }) -- toggle file explorer
-        keymap.set(
-            "n",
-            "<leader>ef",
-            "<cmd>NvimTreeFindFileToggle<CR>",
-            { desc = "Toggle file explorer on current file" }
-        ) -- toggle file explorer on current file
+        -- toggle file explorer
+        keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "File Explorer: Toggle" })
+
+        -- toggle file explorer on current file
+        keymap.set("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<CR>", { desc = "File Explorer: Toggle on current file" })
     end,
 }

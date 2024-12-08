@@ -31,3 +31,9 @@ opt.updatetime = 250
 
 -- Turn off swapfile
 opt.swapfile = false
+
+-- Spellcheck
+vim.opt.spell = true
+vim.opt.spelllang = 'en_us'
+vim.opt.spelloptions = 'camel'
+

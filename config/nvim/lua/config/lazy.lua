@@ -15,12 +15,12 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-     -- Import your plugins
-    {
-        import = "plugins"
-    }, {
-        import = "plugins.lsp"
-    }},
+        -- Import your plugins
+        { import = "plugins" }, { import = "plugins.lsp" }
+    },
+    install = {
+        colorscheme = { "tokyonight" },
+    },
     -- Automatically check for plugin updates but do not notify
     checker = {
         enabled = true,
