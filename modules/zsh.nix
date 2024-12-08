@@ -29,6 +29,11 @@
                 fi
             }
             zvm_after_init_commands+=(fzf_init)
+            
+            # AWS CLI completion
+            autoload -Uz compinit && compinit
+            source ${pkgs.awscli2}/share/zsh/site-functions/_aws
+            complete -C '${pkgs.awscli2}/bin/aws_completer' aws
         '';
     };
 }
