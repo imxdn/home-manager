@@ -35,6 +35,7 @@ return {
         -- Default list of enabled providers defined so that you can extend it
         sources = {
             default = { 'lsp', 'path', 'snippets', 'buffer' },
+            cmdline = {},
         },
     },
     opts_extend = { "sources.default" }
