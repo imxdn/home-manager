@@ -1,5 +1,6 @@
 return {
     "neovim/nvim-lspconfig",
+    dependencies = { 'saghen/blink.cmp' },
     cmd = {'LspInfo', 'LspInstall', 'LspStart'},
     event = {'BufReadPre', 'BufNewFile'},
     init = function()
@@ -26,7 +27,7 @@ return {
         lsp_defaults.capabilities = vim.tbl_deep_extend(
             'force',
             lsp_defaults.capabilities,
-            require('cmp_nvim_lsp').default_capabilities()
+            require('blink.cmp').get_lsp_capabilities()
         )
 
         -- Executes the callback function every time a

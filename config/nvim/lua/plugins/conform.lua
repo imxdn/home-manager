@@ -20,16 +20,16 @@ return {
 
         conform.setup({
             formatters_by_ft = {
-                css = { { "prettierd", "prettier" } },
-                html = { { "prettierd", "prettier" } },
-                javascript = { { "prettierd", "prettier" } },
-                json = { { "prettierd", "prettier" } },
+                css = { "prettierd", stop_after_first = true },
+                html = { "prettierd", stop_after_first = true },
+                javascript = { "prettierd", stop_after_first = true },
+                json = { "prettierd", stop_after_first = true },
                 lua = { "stylua" },
-                markdown = { { "prettierd", "prettier" } },
-                python = { "ruff" },
+                markdown = { "prettierd", stop_after_first = true },
+                -- python = { "ruff" },
                 rust = { "rustfmt", lsp_format = "fallback" },
-                typescript = { { "prettierd", "prettier" } },
-                yaml = { { "prettierd", "prettier" } },
+                typescript = { "prettierd", stop_after_first = true },
+                yaml = { "prettierd", stop_after_first = true },
             },
         })
 

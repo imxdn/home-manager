@@ -3,6 +3,9 @@ local opt = vim.opt
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
+-- Cursor line
+opt.cursorline = true
+
 -- Indenting
 opt.expandtab = true
 opt.shiftwidth = 4
