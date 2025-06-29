@@ -15,7 +15,7 @@
     home.username = "aimad";
     home.homeDirectory = "/home/aimad";
 
-    # Compatbility with Home Manager releases
+    # Compatibility with Home Manager releases
     home.stateVersion = "24.11";
 
     # Nix packages to install
