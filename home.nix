@@ -7,8 +7,9 @@
         ./modules/nvim.nix
         ./modules/starship.nix
         ./modules/tmux.nix
+        ./modules/yazi.nix
         ./modules/zoxide.nix
-        ./modules/zsh.nix
+        ./modules/fish.nix
     ];
 
     # User and paths data
@@ -16,7 +17,7 @@
     home.homeDirectory = "/home/aimad";
 
     # Compatibility with Home Manager releases
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.11";
 
     # Nix packages to install
     home.packages = with pkgs; [
@@ -26,6 +27,7 @@
         eza
         fd
         ripgrep
+        gemini-cli
 
         # Fonts
         nerd-fonts.jetbrains-mono
@@ -41,13 +43,12 @@
     };
 
     # Program overrides
-    programs = {
-        zsh = {
-            shellAliases = {
-                pi = "yay -S";
-                pu = "yay -Syu";
-            };
-        };
+    programs.fish = {
+      enable = true;
+      shellAliases = {
+        pi = "yay -S";
+        pu = "yay -Syu";
+      };
     };
 
     # Home Manager managing home manager
