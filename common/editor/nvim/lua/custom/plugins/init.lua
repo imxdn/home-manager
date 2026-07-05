@@ -1,0 +1,28 @@
+-- Machine-specific plugin overrides
+-- This directory is for per-machine plugin customizations
+--
+-- Examples:
+--
+-- 1. Add a new plugin:
+--    Create a file like `my-plugin.lua`:
+--    return {
+--      "author/plugin-name",
+--      opts = {},
+--    }
+--
+-- 2. Override base plugin options:
+--    Create a file with the same plugin name:
+--    return {
+--      "existing/plugin",
+--      opts = {
+--        -- your overrides here
+--      },
+--    }
+--
+-- 3. Disable a base plugin:
+--    return {
+--      "existing/plugin",
+--      enabled = false,
+--    }
+
+return {}
