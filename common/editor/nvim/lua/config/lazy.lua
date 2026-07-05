@@ -36,7 +36,7 @@ require("lazy").setup {
         enabled = true,
         notify = false,
     },
-    install = { colorscheme = { "ayu-dark", "habamax" } },
+    install = { colorscheme = { "tokyonight-night", "habamax" } },
     -- Do not notify for configuration changes
     change_detection = {
         notify = false,

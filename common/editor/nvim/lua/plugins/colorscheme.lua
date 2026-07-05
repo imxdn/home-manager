@@ -1,11 +1,11 @@
 return {
-    "Shatur/neovim-ayu",
+    "folke/tokyonight.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        require("ayu").setup {
-            mirage = false,
+        require("tokyonight").setup {
+            style = "night",
         }
-        vim.cmd.colorscheme("ayu-dark")
+        vim.cmd.colorscheme("tokyonight-night")
     end,
 }
