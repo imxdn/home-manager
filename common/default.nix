@@ -6,7 +6,7 @@
     ./git
     ./shell
     ./terminal
-    ./theme.nix
+    ./themes
   ];
 
   home.stateVersion = "26.05";

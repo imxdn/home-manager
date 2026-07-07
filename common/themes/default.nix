@@ -2,7 +2,10 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+    # Active color scheme. Swap themes by pointing this at a different file in
+    # this directory (each is a self-contained base16 attrset). See that file
+    # for why we hand-author rather than use base16-schemes' tokyo-night-dark.
+    base16Scheme = import ./tokyonight-night.nix;
 
     # Keep fonts under our control
     fonts = {
