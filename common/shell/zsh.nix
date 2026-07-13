@@ -16,17 +16,10 @@
     };
 
     autocd = true;
-    defaultKeymap = "viins";
 
     autosuggestion.enable = true;
 
     plugins = [
-      {
-        # zsh-vi-mode must load first — it resets keymaps on init
-        name = "zsh-vi-mode";
-        src = pkgs.zsh-vi-mode;
-        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
-      }
       {
         name = "fzf-tab";
         src = pkgs.zsh-fzf-tab;
@@ -93,11 +86,8 @@
       # Autosuggestion strategy — include atuin history
       ZSH_AUTOSUGGEST_STRATEGY=(history completion atuin)
 
-      # Re-bind fzf and atuin after zsh-vi-mode resets keymaps
-      function zvm_after_init() {
-        source <(fzf --zsh)
-        bindkey "^r" atuin-search
-      }
+      source <(fzf --zsh)
+      bindkey "^r" atuin-search
 
       [[ -f ~/.aliases ]] && source ~/.aliases
 
